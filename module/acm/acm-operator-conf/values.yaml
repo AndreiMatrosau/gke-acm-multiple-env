@@ -1,0 +1,12 @@
+# Default values for acm-operator-conf.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+name: config-management
+namespace: config-management-system
+clusterName: gke-acm
+sourceFormat: unstructured
+git:
+  syncRepo: https://github.com/AndreiMatrosau/gke-acm-demo.git
+  syncBranch: main
+  secretType: none
+  policyDir: acm-gke-repo/overlays/environment-1/cluster-1

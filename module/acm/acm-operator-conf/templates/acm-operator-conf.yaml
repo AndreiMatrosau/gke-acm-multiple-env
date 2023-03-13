@@ -1,0 +1,14 @@
+apiVersion: configmanagement.gke.io/v1
+kind: ConfigManagement
+metadata:
+  name: {{ .Values.name }} 
+  namespace: {{ .Values.namespace }} 
+spec:
+  # clusterName is required and must be unique among all managed clusters
+  clusterName: {{ .Values.clusterName }}
+  sourceFormat: {{ .Values.sourceFormat }}
+  git:
+    syncRepo: {{ .Values.git.syncRepo }} 
+    syncBranch: {{ .Values.git.syncBranch }} 
+    secretType: {{ .Values.git.secretType }} 
+    policyDir: {{ .Values.git.policyDir }} 
